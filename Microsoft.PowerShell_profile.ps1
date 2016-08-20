@@ -2,10 +2,19 @@
 The following function and alias assignment
 are for use with git to create files which
 start with a period, e.g. .gitignore
+Of NOTE: you can tell Windows to give a file a name starting with a period
+by entering the name with a period at the beginning and at the end
+e.g. ".gitignore." But in either the command line or mousing about
+the new >> new text file options, it involves an extra step
+and this method just does it with two words:
+touch <filename>
+Here's a question I wrote and answered on stack exchange:
+http://superuser.com/questions/1114376/how-to-use-gits-touch-cmd-in-powershell-to-make-ignore-file
 #>
 
 function touch_file
 {new-item $args[0] -itemtype file}
+
 new-alias -name touch -value touch_file
 
 
@@ -46,6 +55,9 @@ NOTE: don't use "unrestricted"
 
 Either way, I'm sure this will have some horrible repercussion somewhere down the road.
 What a clusterfuck.
+
+Here's a question I wrote, got down voted for and still had to answer myself on stack overflow:
+http://stackoverflow.com/questions/38888642/how-to-use-ri-in-powershell-for-ruby-index-instead-of-remove-item
 #>
 
 rm -Force alias:ri
