@@ -43,23 +43,55 @@ notepad $profile
 del alias:ri -force
 4) Save, close notepad and reload the profile with the command below or close and open Powershell to apply the profile:
 . $profile
-
 This, of course was no use since my Powershell had script execution disabled... So:
 1) Start Windows PowerShell with the "Run as Administrator" option.
 Only members of the Administrators group on the computer can change the execution policy.
 2) Enable running unsigned scripts by entering:
 set-executionpolicy remotesigned
-
 This will allow running unsigned scripts that you write on your local computer and signed scripts from Internet.
 NOTE: don't use "unrestricted"
-
 Either way, I'm sure this will have some horrible repercussion somewhere down the road.
 What a clusterfuck.
-
 Here's a question I wrote, got down voted for and still had to answer myself on stack overflow:
 http://stackoverflow.com/questions/38888642/how-to-use-ri-in-powershell-for-ruby-index-instead-of-remove-item
 #>
 
 rm -Force alias:ri
+
+
+<# http://superuser.com/questions/1116599/what-is-the-powershell-command-equivalent-to-selecting-sleep-from-the-win7-men
+
+Keeps your session in memory and puts the computer in
+a low-power state so that you can quickly resume
+working.
+
+Create a PS script or run following lines directly in PowerShell:
+
+# load assembly System.Windows.Forms which will be used
+Add-Type -AssemblyName System.Windows.Forms
+
+# set powerstate to suspend (sleep mode)
+$PowerState = [System.Windows.Forms.PowerState]::Suspend;
+
+# do not force putting Windows to sleep
+$Force = $false;
+
+# so you can wake up your computer from sleep
+$DisableWake = $false;
+
+# do it! Set computer to sleep
+[System.Windows.Forms.Application]::SetSuspendState($PowerState, $Force, $DisableWake);
+#>
+
+function sleepy_time {
+Add-Type -AssemblyName System.Windows.Forms
+$PowerState = [System.Windows.Forms.PowerState]::Suspend;
+$Force = $false;
+$DisableWake = $false;
+[System.Windows.Forms.Application]::SetSuspendState($PowerState, $Force, $DisableWake);
+}
+
+new-alias -name nap -value sleepy_time
+
 
 
