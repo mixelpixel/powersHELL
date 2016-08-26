@@ -1,4 +1,6 @@
 https://git-scm.com/
+http://superuser.com/questions/1115861/how-do-i-create-a-new-remote-repository-in-my-github-account-with-powershell/1116103#1116103
+http://superuser.com/questions/1114376/how-to-use-gits-touch-cmd-in-powershell-to-make-ignore-file/1114404#1114404
 
 - Download a repository to a local directory
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
@@ -26,7 +28,8 @@ $ git commit
 # AND THEN use the vi interface to write a comment (i for insert; type the comment; ESCape; :wq to quit out)
 # Commits the tracked changes and prepares them to be pushed to a remote repository.
 # To remove this commit and modify the file, use 'git reset --soft HEAD~1' and commit and add the file again.
-
+$ git push -f origin master
+# forceful!
 
 - In the Command prompt, add the URL for the remote repository where your local repository will be pushed.
 $ git remote add origin remote repository URL
