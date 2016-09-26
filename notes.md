@@ -6,6 +6,7 @@ reduces to:
 `1..9 | % $_{ md -name $("ch" + $_) }`  
 and got followed up by:  
 `1..9 | % $_{ mv ch$_*.* ch$_ }`  
+See also: http://stackoverflow.com/questions/22531978/create-folders-with-leading-zeroes-in-powershell  
   
   % = For-Each  
   
