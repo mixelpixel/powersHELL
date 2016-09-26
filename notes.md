@@ -7,6 +7,7 @@ reduces to:
 and got followed up by:  
 `1..9 | % $_{ mv ch$_*.* ch$_ }`  
 See also: http://stackoverflow.com/questions/22531978/create-folders-with-leading-zeroes-in-powershell  
+& http://superuser.com/questions/1128290/multiple-directories-padded-with-leading-zeros-from-a-single-call-to-mkdir-in-po  
   
   % = For-Each  
   
