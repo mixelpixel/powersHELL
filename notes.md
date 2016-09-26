@@ -1,3 +1,5 @@
+http://www.computerperformance.co.uk/powershell/powershell_syntax.htm  
+  
 The PowerShell equivalent of 'nix:
 `mkdir ch{1..9}`  
 http://superuser.com/questions/1128113/multiple-directories-powershell-equivalent-of-mkdir-dir1-9/1128116  
